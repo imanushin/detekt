@@ -31,7 +31,38 @@ the `--report txt:path/to/report` cli flag.
 </SmellBaseline>
 ```
 
+#### Gradle
+
 If you are using the gradle-plugin run the `detektBaseline` task to generate yourself a `baseline.xml`.
+This will create one baseline file per Gradle module.
+As this might not be the desired behavior for a multi module project, think about implementing
+a custom meta baseline task:
+
+```gradle
+
+subprojects {
+    detekt {
+        ...
+        baseline = file(new File(rootProject.projectDir, "/detekt/baseline.xml"))
+        ...
+    }
+}
+
+task projectBaseline(type: io.gitlab.arturbosch.detekt.DetektCreateBaselineTask) {
+    description = "Overrides current baseline."
+
+    input = files(rootProject.projectDir)
+    config = files("$rootDir/detekt/config.yml")
+    baseline = file(new File(rootProject.projectDir, "/detekt/baseline.xml"))
+    failFast = true
+    parallel = true
+    include '**/*.kt'
+    include '**/*.kts'
+    exclude '**/test/resources/**'
+}
+```
+
+#### FAQ
 
 Be aware that auto formatting cannot be combined with the `baseline`.
 The signatures for a `;` for example would be too ambiguous.
