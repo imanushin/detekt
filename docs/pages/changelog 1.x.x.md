@@ -6,6 +6,43 @@ permalink: changelog.html
 toc: true
 ---
 
+#### 1.3.0
+
+##### Notable changes
+
+- Minimal Gradle version increased to 5.0
+
+##### Changelog
+
+- Create UnnecessaryAnnotationUseSiteTargetRule - [#2099](https://github.com/arturbosch/detekt/pull/2099)
+- Gradle 6 - [#1902](https://github.com/arturbosch/detekt/pull/1902)
+- Gradle 6 planning - [#1820](https://github.com/arturbosch/detekt/issues/1820)
+
+See all issues at: [1.3.0](https://github.com/arturbosch/detekt/milestone/51)
+
+#### 1.2.2
+
+##### Notable Changes
+
+- 1.2.1 introduced breaking changes for users of Gradle < 5. This was reverted.
+- 1.3.0 will drop support for Gradle < 5.
+- Fixed a regression in the html report.
+
+##### Changelog
+
+- regression updating 1.2.0 to 1.2.1, unknown property 'filters' for object of type DetektExtension - [#2163](https://github.com/arturbosch/detekt/issues/2163)
+- StringIndexOutOfBoundsException when generating HTML report - [#2160](https://github.com/arturbosch/detekt/pull/2160)
+- Restore KotlinExtension - [#2159](https://github.com/arturbosch/detekt/pull/2159)
+- 1.2.1 breaks the build with: unresolved reference: detekt - [#2152](https://github.com/arturbosch/detekt/issues/2152)
+- Updated to correct classpath documentation for Android projects. - [#2149](https://github.com/arturbosch/detekt/pull/2149)
+- Update to Kotlin v1.3.61 - [#2147](https://github.com/arturbosch/detekt/pull/2147)
+- Document how to exclude detekt from the check task - #1894 - [#2144](https://github.com/arturbosch/detekt/pull/2144)
+- Use JDK 11 (LTS) + 13 for Travis builds - [#2142](https://github.com/arturbosch/detekt/pull/2142)
+- Don't compile test snippets (bindingContext) - [#2137](https://github.com/arturbosch/detekt/pull/2137)
+- StringIndexOutOfBoundsException: String index out of range: 8 when generating HTML report after update to 1.2.0 - [#2134](https://github.com/arturbosch/detekt/issues/2134)
+
+See all issues at: [1.2.2](https://github.com/arturbosch/detekt/milestone/53)
+
 #### 1.2.1
 
 ##### Notable changes
